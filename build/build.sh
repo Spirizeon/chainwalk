@@ -3,7 +3,7 @@
 
 # Installing packages
 apt update
-apt install -y net-tools open-vm-tools openssh-server python3 python3-pip
+apt install -y net-tools open-vm-tools openssh-server python3 python3-pip curl
 
 # Installing ollama backend
 curl -fsSL https://ollama.com/install.sh | sh
