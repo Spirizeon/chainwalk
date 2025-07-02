@@ -15,13 +15,13 @@ LOG_FORMAT: '%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(mess
 HTTPX_DEFAULT_TIMEOUT: 300.0
 
 # 知识库默认存储路径
-KB_ROOT_PATH: /home/berzi/Documents/CVE-2025-6855/build/data/knowledge_base
+KB_ROOT_PATH: /home/vboxuser/chainwalk/build/data/knowledge_base
 
 # 数据库默认存储路径。如果使用sqlite，可以直接修改DB_ROOT_PATH；如果使用其它数据库，请直接修改SQLALCHEMY_DATABASE_URI。
-DB_ROOT_PATH: /home/berzi/Documents/CVE-2025-6855/build/data/knowledge_base/info.db
+DB_ROOT_PATH: /home/vboxuser/chainwalk/build/data/knowledge_base/info.db
 
 # 知识库信息数据库连接URI
-SQLALCHEMY_DATABASE_URI: sqlite:////home/berzi/Documents/CVE-2025-6855/build/data/knowledge_base/info.db
+SQLALCHEMY_DATABASE_URI: sqlite:////home/vboxuser/chainwalk/build/data/knowledge_base/info.db
 
 # API 是否开启跨域
 OPEN_CROSS_DOMAIN: false

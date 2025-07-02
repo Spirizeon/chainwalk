@@ -12,7 +12,7 @@ ollama pull qwen2.5:0.5b
 ollama pull quentinz/bge-large-zh-v1.5:latest
 ollama serve
 # Installing chatchat client
-pip install -r chatchat_requirements.txt
+pip install 'langchain-chatchat[ollama]==0.3.1'
 # Initialising
 chatchat kb -r 
 # Launch app! but in background
