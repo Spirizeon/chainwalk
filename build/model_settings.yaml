@@ -1,0 +1,69 @@
+
+# 模型配置项
+
+DEFAULT_LLM_MODEL: qwen2.5:0.5b
+DEFAULT_EMBEDDING_MODEL: bge-large-zh-v1.5
+Agent_MODEL: ''
+HISTORY_LEN: 3
+MAX_TOKENS:
+TEMPERATURE: 0.7
+SUPPORT_AGENT_MODELS:
+  - chatglm3-6b
+  - glm-4
+  - openai-api
+  - Qwen-2
+  - qwen2-instruct
+  - qwen2.5
+  - gpt-3.5-turbo
+  - gpt-4o
+
+LLM_MODEL_CONFIG:
+  preprocess_model:
+    model: ''
+    temperature: 0.05
+    max_tokens: 4096
+    history_len: 10
+    prompt_name: default
+    callbacks: false
+  llm_model:
+    model: ''
+    temperature: 0.9
+    max_tokens: 4096
+    history_len: 10
+    prompt_name: default
+    callbacks: true
+  action_model:
+    model: ''
+    temperature: 0.01
+    max_tokens: 4096
+    history_len: 10
+    prompt_name: ChatGLM3
+    callbacks: true
+  postprocess_model:
+    model: ''
+    temperature: 0.01
+    max_tokens: 4096
+    history_len: 10
+    prompt_name: default
+    callbacks: true
+  image_model:
+    model: sd-turbo
+    size: 256*256
+
+MODEL_PLATFORMS:
+  - platform_name: ollama
+    platform_type: ollama
+    api_base_url: http://127.0.0.1:11434/v1
+    api_key: EMPTY
+    api_concurrencies: 5
+    auto_detect_model: false
+    llm_models:
+      - qwen2.5:0.5b
+    embed_models:
+      - quentinz/bge-large-zh-v1.5
+    text2image_models: []
+    image2text_models: []
+    rerank_models: []
+    speech2text_models: []
+    text2speech_models: []
+

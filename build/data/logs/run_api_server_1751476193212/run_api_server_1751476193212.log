@@ -1,0 +1,1 @@
+2025-07-02 23:36:23,031 httpx        12051 INFO     HTTP Request: POST http://127.0.0.1:11434/v1/chat/completions "HTTP/1.1 200 OK"
