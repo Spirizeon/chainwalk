@@ -32,10 +32,10 @@ DEFAULT_BIND_HOST: 127.0.0.1
 
 # API 服务器地址
 API_SERVER:
-  host: 127.0.0.1
+  host: 0.0.0.0
   port: 7861
 
 # WEBUI 服务器地址
 WEBUI_SERVER:
-  host: 127.0.0.1
+  host: 0.0.0.0
   port: 8501
