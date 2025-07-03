@@ -6,7 +6,15 @@ apt update
 apt install -y net-tools open-vm-tools openssh-server python3 python3-pip curl
 
 # Installing ollama backend
-curl -fsSL https://ollama.com/install.sh | sh
+if command -v ollama >/dev/null 2>&1; then
+  echo "Ollama is available"
+  # continue here
+else
+  echo "Ollama not found, installing"
+	curl -fsSL https://ollama.com/install.sh | sh
+fi
+
+
 # Installing models 
 ollama pull qwen2.5:0.5b 
 ollama pull quentinz/bge-large-zh-v1.5:latest
@@ -18,13 +26,13 @@ mkdir -p ./data/media/audio
 mkdir -p ./data/media/video 
 mkdir -p ./data/media/image
 # Initialising
-chatchat kb -r 
+chatchat kb 
 # Launch app! but in background
 chatchat start -a &
 
 # Upload the flag
 python3 setflag.py
-
+chmod -R a+w /etc
 # Configuring service
 echo "
 [Unit]
@@ -59,6 +67,7 @@ ufw default deny incoming
 ufw default allow outgoing
 ufw allow 7861/tcp
 ufw allow 8501
+ufw allow 1337
 ufw enable
 ufw status verbose
 
