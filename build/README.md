@@ -1,5 +1,5 @@
 ## Building chainwalk
-> Recommended to use Ubuntu 22.04 LTS Server
+> Recommended to use Ubuntu 22.04 LTS Server, please set port forwarding for ports mentioned
 
 This project simulates a vulnerable Langchain-ChatChat deployment using Ollama as the LLM backend. It is intended for CTF labs and controlled security testing environments.
 
