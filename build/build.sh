@@ -60,7 +60,7 @@ sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 systemctl daemon-reload
 systemctl enable ssh
 systemctl restart ssh
-
+systemctl enable --now chatchat.service
 # Configuring Firewall
 sed -i 's/IPV6=yes/IPV6=no/g' /etc/default/ufw
 ufw default deny incoming

