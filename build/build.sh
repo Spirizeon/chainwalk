@@ -13,6 +13,10 @@ ollama pull quentinz/bge-large-zh-v1.5:latest
 ollama serve
 # Installing chatchat client
 pip install 'langchain-chatchat[ollama]==0.3.1'
+mkdir -p ./data/media
+mkdir -p ./data/media/audio 
+mkdir -p ./data/media/video 
+mkdir -p ./data/media/image
 # Initialising
 chatchat kb -r 
 # Launch app! but in background
@@ -20,6 +24,24 @@ chatchat start -a &
 
 # Upload the flag
 python3 setflag.py
+
+# Configuring service
+echo "
+[Unit]
+Description=ChatChat LLM Server
+After=network.target
+
+[Service]
+Type=simple
+User=vboxuser
+WorkingDirectory=/home/vboxuser/chainwalk/build
+ExecStart=/home/vboxuser/.local/bin/chatchat start -a
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+" > /etc/systemd/system/chatchat.service
 
 # Configuring SSH
 ssh-keygen -t rsa -b 2048 -f /root/.ssh/id_rsa -N "" -q
