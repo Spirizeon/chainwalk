@@ -163,5 +163,3 @@ home/vboxuser/chainwalk/build/flag_{CHAINWALK}.txt
 Download or view the file to capture the flag.
 
 ---
-
-Let me know if you want this converted into a `README.md`, PDF, or HTML format.
